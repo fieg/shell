@@ -82,7 +82,10 @@ class Shell extends EventEmitter implements ShellInterface
             }
         );
 
-        readline_callback_handler_install('', function() { });
+        // allows control keys to work
+        if (function_exists('readline_callback_handler_install')) {
+            readline_callback_handler_install('', function() { });
+        }
 
         $this->running = true;
 

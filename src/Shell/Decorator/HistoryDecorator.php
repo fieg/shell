@@ -172,6 +172,8 @@ class HistoryDecorator implements ShellInterface
 
     /**
      * @param $buffer
+     *
+     * @return $this
      */
     public function setBuffer($buffer)
     {

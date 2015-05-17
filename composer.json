@@ -6,7 +6,6 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.5",
-    "ext-readline": "*",
     "evenement/evenement": "~2.0",
     "react/event-loop": "0.4.*"
   },
@@ -17,5 +16,8 @@
     "psr-4": {
       "Fieg\\Shell\\": "src/Shell"
     }
+  },
+  "suggest": {
+    "ext-readline": "Allows up and down arrow keys and other control keys to work properly"
   }
 }
