@@ -1,0 +1,21 @@
+{
+  "name": "fieg/shell",
+  "description": "Interactive shell (cli) component for PHP",
+  "keywords": ["shell", "interactive", "cli"],
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.5",
+    "ext-readline": "*",
+    "evenement/evenement": "~2.0",
+    "react/event-loop": "0.4.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fieg\\Shell\\": "src/Shell"
+    }
+  }
+}
