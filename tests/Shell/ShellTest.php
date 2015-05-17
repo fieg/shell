@@ -1,5 +1,6 @@
 <?php
 
+use Fieg\Shell\Output\InMemoryOutput;
 use Fieg\Shell\Output\NullOutput;
 use Fieg\Shell\Shell;
 use Fieg\Shell\ShellEvents;
@@ -50,5 +51,26 @@ class ShellTest extends \PHPUnit_Framework_TestCase
         $shell->prompt();
 
         $shell->submit('test123');
+    }
+
+    public function testPublish()
+    {
+        $shell = new Shell($output = new InMemoryOutput());
+
+        $shell->publish('Hello world!');
+
+        $this->assertEquals("Hello world!" . PHP_EOL, $output->getDisplay());
+    }
+
+    public function testPrompt()
+    {
+        $shell = new Shell($output = new InMemoryOutput());
+
+        $shell->prompt('shell> ');
+
+        $shell->schedule(0.1, function() use ($shell) { $shell->stop(); });
+        $shell->run();
+
+        $this->assertEquals(PHP_EOL . "shell> ", $output->getDisplay());
     }
 }
