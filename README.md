@@ -43,7 +43,7 @@ $shell->run();
 echo "Bye!" . PHP_EOL;
 ```
 
-This library also comes with a history support. With this you can use the up and own arrows to
+This library also comes with a history support. With this you can use the up and down arrows to
 browse through the recently typed commands. To enable the history support, just wrap the Shell
 class in a HistoryDecorator:
 
